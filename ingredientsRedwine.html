@@ -1,0 +1,134 @@
+<!--
+AUTHORS: Susanne Jandl & Dana-Monica Vlas
+USED TEMPLATE CREATED BY: Müslüm Atas & Mathias Knoll
+DESCRIPTION: Ingredinets page, shows ingredients of Pizza Veggie
+LAST CHANGE: 29.12.2023
+-->
+
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <title>Zutaten - Rotwein</title>
+
+    <link rel="icon" href="img/juice.png" />
+
+    <!-- Manifest and Styles
+	  The manifest file lists all the information about the website in a JSON format und usually resides in the root folder of a web app -->
+    <link rel="manifest" href="manifest.json" />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- App Name -->
+    <meta name="application-name" content="Easy choice menu PWA" />
+    <!-- On iOS, you can specify a web application title for the launch icon -->
+    <meta name="apple-mobile-web-app-title" content="Easy choice menu PWA" />
+
+    <!-- Capability -->
+    <meta name="mobile-web-app-capable" content="yes" />
+    <!-- Hiding Safari User Interface Components in standalone mode-->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+
+    <!-- Starting URL -->
+    <meta name="msapplication-starturl" content="/index.html" />
+
+    <!-- Theme/Display -->
+    <meta name="theme-color" content="#FBFBFB" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Icon for iOS 180x180 -->
+    <link rel="apple-touch-icon" href="img/touch-icon-iphone.png" />
+
+    <!-- Splash Screens for iOS -->
+    <link
+      href="img/apple_splash_2048.png"
+      sizes="2048x2732"
+      rel="apple-touch-startup-image"
+    />
+    <link
+      href="img/apple_splash_1668.png"
+      sizes="1668x2224"
+      rel="apple-touch-startup-image"
+    />
+    <link
+      href="img/apple_splash_1536.png"
+      sizes="1536x2048"
+      rel="apple-touch-startup-image"
+    />
+    <link
+      href="img/apple_splash_1125.png"
+      sizes="1125x2436"
+      rel="apple-touch-startup-image"
+    />
+    <link
+      href="img/apple_splash_1242.png"
+      sizes="1242x2208"
+      rel="apple-touch-startup-image"
+    />
+    <link
+      href="img/apple_splash_750.png"
+      sizes="750x1334"
+      rel="apple-touch-startup-image"
+    />
+    <link
+      href="img/apple_splash_640.png"
+      sizes="640x1136"
+      rel="apple-touch-startup-image"
+    />
+  </head>
+
+  <body class="fullscreen">
+    <script src="main.js"></script>
+    <div class="flexcol">
+      <div class="headerbox">
+        <button class="backbutton" onclick="history.back()">&lt;</button>
+        <div class="subTitle" width="60%">Rotwein</div>
+        <div class="subtitle_rightspace"></div>
+      </div>
+
+      <div class="checkboxesbox">
+        <div class="flexrow">
+          <div class="checkbox_box">
+            <div class="flexcol" width="30%"></div>
+            <input type="checkbox" id="vegetarian" value="isVegetarian" checked disabled/>
+          </div>
+          <div class="checkbox_text">
+            <label for="vegetarian">vegetarisch</label>
+          </div>
+        </div>
+        <div class="flexrow">
+          <div class="checkbox_box">
+            <input type="checkbox" id="vegan" value="isVegan" checked disabled/>
+          </div>
+          <div class="checkbox_text">
+            <label for="vegan">vegan</label>
+          </div>
+        </div>
+        <div class="flexrow">
+          <div class="checkbox_box">
+            <input type="checkbox" id="lFree" value="isLFree" checked disabled/>
+          </div>
+          <div class="checkbox_text">
+            <label for="lFree">laktosefei</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="ingredients_row">
+        <div class="ingredients_col">
+          <p>Waser<br/>Weintrauben</p>
+        </div>
+        <div class="ingredients_col">
+          <p>Alkohol</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="use_webworker.js"></script>
+    <script src="use_serviceworker.js"></script>
+    
+  </body>
+</html>

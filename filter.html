@@ -1,0 +1,151 @@
+<!--
+AUTHORS: Susanne Jandl & Dana-Monica Vlas
+USED TEMPLATE CREATED BY: Müslüm Atas & Mathias Knoll
+DESCRIPTION: menu can be filtered, work in progress
+LAST CHANGE: 29.12.2023
+-->
+
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <title>Filter</title>
+
+    <link rel="icon" href="img/ordericon.png" />
+
+    <!-- Manifest and Styles
+	  The manifest file lists all the information about the website in a JSON format und usually resides in the root folder of a web app -->
+    <link rel="manifest" href="manifest.json" />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- App Name -->
+    <meta name="application-name" content="Easy choice menu PWA" />
+    <!-- On iOS, you can specify a web application title for the launch icon -->
+    <meta name="apple-mobile-web-app-title" content="Easy choice menu PWA" />
+
+    <!-- Capability -->
+    <meta name="mobile-web-app-capable" content="yes" />
+    <!-- Hiding Safari User Interface Components in standalone mode-->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+
+    <!-- Starting URL -->
+    <meta name="msapplication-starturl" content="/index.html" />
+
+    <!-- Theme/Display -->
+    <meta name="theme-color" content="#FBFBFB" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Icon for iOS 180x180 -->
+    <link rel="apple-touch-icon" href="img/touch-icon-iphone.png" />
+
+    <!-- Splash Screens for iOS -->
+    <link
+      href="img/apple_splash_2048.png"
+      sizes="2048x2732"
+      rel="apple-touch-startup-image"
+    />
+    <link
+      href="img/apple_splash_1668.png"
+      sizes="1668x2224"
+      rel="apple-touch-startup-image"
+    />
+    <link
+      href="img/apple_splash_1536.png"
+      sizes="1536x2048"
+      rel="apple-touch-startup-image"
+    />
+    <link
+      href="img/apple_splash_1125.png"
+      sizes="1125x2436"
+      rel="apple-touch-startup-image"
+    />
+    <link
+      href="img/apple_splash_1242.png"
+      sizes="1242x2208"
+      rel="apple-touch-startup-image"
+    />
+    <link
+      href="img/apple_splash_750.png"
+      sizes="750x1334"
+      rel="apple-touch-startup-image"
+    />
+    <link
+      href="img/apple_splash_640.png"
+      sizes="640x1136"
+      rel="apple-touch-startup-image"
+    />
+  </head>
+
+  <body class="fullscreen">
+    <script src="main.js"></script>
+    <div class="flexcol">
+      <div class="headerbox">
+        <button class="backbutton" onclick="history.back()">&lt;</button>
+        <div class="subTitle" width="60%">Speisekarte filtern</div>
+        <div class="subtitle_rightspace"></div>
+      </div>
+
+      <div class="checkboxesbox">
+        <div class="flexrow">
+          <div class="checkbox_box">
+            <div class="flexcol" width="30%"></div>
+            <input type="checkbox" id="vegetarian" value="isVegetarian" />
+          </div>
+          <div class="checkbox_text">
+            <label for="vegetarian">vegetarisch</label>
+          </div>
+        </div>
+        <div class="flexrow">
+          <div class="checkbox_box">
+            <input type="checkbox" id="vegan" value="isVegan" />
+          </div>
+          <div class="checkbox_text">
+            <label for="vegan">vegan</label>
+          </div>
+        </div>
+        <div class="flexrow">
+          <div class="checkbox_box">
+            <input type="checkbox" id="lFree" value="isLFree" />
+          </div>
+          <div class="checkbox_text">
+            <label for="lFree">laktosefei</label>
+          </div>
+        </div>
+      </div>
+      <div class="paragraph">
+        <p>Das schmeckt mir nicht:</p>
+      </div>
+      <select id="dropdownIngredients" title="Ingredients">
+        <option value="Gib ein Zutat ein">Gib eine Zutat ein</option>
+        <option value="Zwiebel">Zwiebel</option>
+        <option value="Knoblauch">Knoblauch</option>
+        <option value="Mehl">Mehl</option>
+        <option value="Milch">Milch</option>
+        <option value="Nüsse">Nüsse</option>
+      </select>
+      <button id="selectIngredient" onclick="">zu Filter hinzufügen</button>
+      <label for="meineFilter" class="green-label">Meine Filter:</label>
+      <textarea
+        id="meineFilter"
+        name="meineFilter"
+        rows="5"
+        cols="10"
+        maxlength="60"
+      ></textarea>
+      <div class="filterButtons">
+        <button id="btn_reset" action="">zurücksetzen</button>
+        <button id="btn_addtoFilter" action="">übernehmen</button>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="use_webworker.js"></script>
+    <script src="use_serviceworker.js"></script>
+    <!--
+      <input class="back_button" type=button onClick="parent.location='index.html'" value='Back'>
+    -->
+  </body>
+</html>

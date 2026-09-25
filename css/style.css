@@ -1,0 +1,510 @@
+body {
+  font-family: sans-serif;
+}
+
+/* Make content area fill the entire browser window */
+.fullscreen {
+  display: flex;
+  flex-direction: column;
+  /* background-color: #4edb4e;*/
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+/* Center the content in the browser window */
+.container {
+  margin: auto;
+  text-align: center;
+}
+
+.flexrow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* place header in a headerbox */
+.headerbox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 20vw;
+}
+
+/* for header with restaurant name */
+.restaurantTitle {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 8vw;
+  font-size: 10vw;
+  font-weight: bold;
+  text-align: center;
+  color: #7fc60b;
+}
+
+/* for subtitles like "Speisen und Getränke" */
+.subTitle {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 7vw;
+  text-align: center;
+  font-size: 8vw;
+  font-weight: bold;
+  color: #6b5a39;
+}
+
+/* field for a category should include category_icon and category_text */
+.categorybox {
+  align-items: center;
+  justify-content: space-between;
+  height: 21vw;
+  background-color: #e0d4ba;
+}
+
+/* field for a product should include product_icon, product_text, add button, ingredients button, price */
+.productbox {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 29.4vw;
+  background-color: #51514f;
+}
+
+.flexcol {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+}
+
+/*from initial download, not used at the moment */
+.custom_button {
+  background-color: #5b6f5c;
+  border: none;
+  color: white;
+  font-size: 4vw;
+  padding: 10px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+.title {
+  font-size: 8vw;
+  margin-left: 20px;
+  margin-top: 40px;
+  color: rgb(99, 97, 97);
+}
+.ordericon {
+  float: right;
+  margin-right: 40px;
+  height: 40px;
+  width: 50px;
+}
+#dropdownRestaurant {
+  font-size: 1.3em;
+  font-weight: bold;
+  height: auto;
+  padding: 15px;
+  color: #5c5b5b;
+  background-color: #f5f5f5;
+  margin-top: 60px;
+  margin-bottom: 60px;
+  border-color: #f5f5f5;
+  border-radius: 5px;
+}
+#dropdownIngredients {
+  font-size: 1em;
+  font-weight: bold;
+  height: auto;
+  width: 60%;
+  padding: 10px;
+  color: #5c5b5b;
+  background-color: #f5f5f5;
+  border-color: #f5f5f5;
+  border-radius: 5px;
+  margin: 0 auto;
+}
+#startButton {
+  font-size: 2em;
+  font-weight: bold;
+  height: auto;
+  width: 60%;
+  background-color: #b7b5b5;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+#startButton:hover {
+  background-color: black;
+  color: #7fc60b;
+}
+#selectIngredient {
+  font-size: 1em;
+  font-weight: bold;
+  height: auto;
+  width: fit-content;
+  margin: 0 auto;
+  margin-top: 5%;
+  color: white;
+  padding: 10px;
+  background-color: #939191;
+  border-radius: 10px;
+}
+.green-label {
+  color: #7fc60b;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+}
+textarea {
+  display: block;
+  width: 80%; /* Lățimea de 100% a elementului textarea */
+  padding: 5px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin: 0 auto;
+  resize: vertical; /* Permite redimensionarea verticală a zonei de text */
+}
+.filterButtons {
+  display: flex;
+  justify-content: center;
+  margin-top: 4em;
+}
+.filterButtons button {
+  margin-right: 1em;
+  margin-left: 1em;
+}
+#btn_reset {
+  font-size: 1em;
+  font-weight: bold;
+  height: auto;
+  width: 40%;
+  padding: 10px;
+  color: #665636;
+  background-color: #e0d4ba;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+#btn_addtoFilter {
+  font-size: 1em;
+  font-weight: bold;
+  height: auto;
+  width: 40%;
+  padding: 10px;
+  color: white;
+  background-color: #7fc60b;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+#btn_addtoFilter:hover {
+  background-color: black;
+  color: #7fc60b;
+}
+
+#orderbutton {
+  align-self: center;
+  font-size: 2em;
+  font-weight: bold;
+  width: 50%;
+  background-color: #b7b5b5;
+  border-radius: 10px;
+}
+
+#orderImage {
+  margin: 5vw;
+  align-self: center;
+  width: 50%;
+}
+
+.backbutton {
+  display: flex;
+  justify-self: center;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-left: 5vw;
+  color: white;
+  font-weight: bold;
+  font-size: 10vw;
+  text-align: center;
+  width: 10%;
+  height: 10vw;
+  background-color: #e0d4ba;
+  border-radius: 15px;
+}
+
+.subtitle_rightspace {
+  display: flex;
+  flex-direction: column;
+  margin-right: 5vw;
+  width: 10%;
+}
+
+/* for icons in categorybox */
+.category_icon {
+  display: flex;
+  flex-direction: column;
+  height: 15vw;
+  margin-left: 3vw;
+  margin-right: 3vw;
+}
+
+/* for icons in productbox */
+.product_icon {
+  display: flex;
+  flex-direction: column;
+  height: 25vw;
+  margin-left: 3vw;
+  margin-right: 3vw;
+}
+
+/* for text in categorybox */
+.category_text {
+  display: flex;
+  flex-direction: column;
+  margin-left: 1vw;
+  color: black;
+  font-weight: bold;
+  font-size: 10vw;
+  width: 75%;
+  text-decoration: none;
+}
+
+/* for text in productbox */
+.product_text {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-left: 1vw;
+  color: white;
+  font-weight: bold;
+  font-size: 5vw;
+  width: 70%;
+  height: 14vw;
+}
+
+/* for price in productbox */
+.product_price {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-left: 1vw;
+  color: white;
+  font-weight: bold;
+  font-size: 5vw;
+  width: 30%;
+  height: 14vw;
+}
+
+/* part of productbox */
+.ingredients_button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 4vw;
+  color: white;
+  font-weight: bold;
+  font-size: 5vw;
+  width: 50%;
+  height: 10vw;
+  background-color: #7b7a76;
+  border-radius: 5px;
+}
+
+/* partof productbox */
+.add_button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-right: 4vw;
+  color: white;
+  font-weight: bold;
+  font-size: 10vw;
+  width: 25%;
+  height: 10vw;
+  background-color: #d7c6a6;
+  border-radius: 5px;
+}
+
+.checkboxesbox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+
+/* part of checkboxesbox */
+.checkbox_box {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10%;
+  margin-left: 30%;
+  width: 10%;
+}
+
+/* for text in checkboxesbox */
+.checkbox_text {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10%;
+  margin-right: 30%;
+  color: black;
+  font-weight: bold;
+  font-size: 5vw;
+  width: 30%;
+}
+.paragraph {
+  text-align: center;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #6b5a39;
+  margin-top: 10%;
+}
+
+.ingredients_row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.ingredients_col {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  margin-right: 5vw;
+  margin-left: 5vw;
+  margin-top: 5vw;
+  line-height: 150%;
+}
+/*bottom naviation bar, should include elements (navbar a)*/
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.navbar a {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  width: 15;
+  text-align: center;
+  font-size: 3vw;
+  text-decoration: none;
+}
+
+.navbar_image {
+  margin-top: 5vw;
+  height: 10vw;
+  width: 13vw;
+  align-self: center;
+}
+
+/* field for a order item sets size of a row, font and default colors */
+.orderitembox {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 15vw;
+  background-color: #d9d9d9;
+  font-weight: bold;
+  font-size: 5vw;
+  color: black;
+}
+
+/* for text in orderitembox */
+.order_text {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-left: 3vw;
+  width: 50%;
+  height: 14vw;
+}
+
+/* for price in orderitembox */
+.order_price {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-right: 3vw;
+  width: 15%;
+  height: 14vw;
+}
+
+.order_add {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-left: 1vw;
+  width: 10%;
+  height: 14vw;
+}
+
+.order_remove {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-left: 1vw;
+  width: 10%;
+  height: 14vw;
+}
+
+.order_amount {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-left: 1vw;
+  width: 10%;
+  height: 14vw;
+}
+
+.order_input {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-right: 3vw;
+  width: 15%;
+  height: 14vw;
+  font-size: 5;
+  font-weight: bold;
+  background-color: #d9d9d9;
+}
+
+.sum {
+  color: #6b5a39;
+}
+
+/* for price in orderitembox */
+.order_sum {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-right: 3vw;
+  width: 15%;
+  height: 14vw;
+}
+
+.table_no {
+  color: #bea26d;
+  background-color: #51514f;
+}

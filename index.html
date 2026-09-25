@@ -1,0 +1,122 @@
+<!--
+AUTHORS: Susanne Jandl & Dana-Monica Vlas
+USED TEMPLATE CREATED BY: Müslüm Atas & Mathias Knoll
+DESCRIPTION: landing page, restaurant selection
+LAST CHANGE: 29.12.2023
+
+REFERENCES: https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps
+-->
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <title>Easy Choice Menu (PWA)</title>
+
+    <link rel="icon" href="img/ordericon.png" />
+
+    <!-- Manifest and Styles
+	  The manifest file lists all the information about the website in a JSON format und usually resides in the root folder of a web app -->
+    <link rel="manifest" href="manifest.json" />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- App Name -->
+    <meta name="application-name" content="Easy Choice Menu (PWA)" />
+    <!-- On iOS, you can specify a web application title for the launch icon -->
+    <meta name="apple-mobile-web-app-title" content="Easy Choice Menu (PWA)" />
+
+    <!-- Capability -->
+    <meta name="mobile-web-app-capable" content="yes" />
+    <!-- Hiding Safari User Interface Components in standalone mode-->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+
+    <!-- Starting URL -->
+    <meta name="msapplication-starturl" content="/index.html" />
+
+    <!-- Theme/Display -->
+    <meta name="theme-color" content="white" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Icon for iOS 180x180 -->
+    <link rel="apple-touch-icon" href="img/touch-icon-iphone.png" />
+
+    <!-- Splash Screens for iOS -->
+    <link
+      href="img/apple_splash_2048.png"
+      sizes="2048x2732"
+      rel="apple-touch-startup-image"
+    />
+    <link
+      href="img/apple_splash_1668.png"
+      sizes="1668x2224"
+      rel="apple-touch-startup-image"
+    />
+    <link
+      href="img/apple_splash_1536.png"
+      sizes="1536x2048"
+      rel="apple-touch-startup-image"
+    />
+    <link
+      href="img/apple_splash_1125.png"
+      sizes="1125x2436"
+      rel="apple-touch-startup-image"
+    />
+    <link
+      href="img/apple_splash_1242.png"
+      sizes="1242x2208"
+      rel="apple-touch-startup-image"
+    />
+    <link
+      href="img/apple_splash_750.png"
+      sizes="750x1334"
+      rel="apple-touch-startup-image"
+    />
+    <link
+      href="img/apple_splash_640.png"
+      sizes="640x1136"
+      rel="apple-touch-startup-image"
+    />
+    <script src="main.js" defer></script>
+  </head>
+
+  <body class="fullscreen">
+    <header>
+      <h1 class="title">Willkommen bei</h1>
+      <img src="img/ordericon.png" alt="Logo" class="ordericon" />
+    </header>
+    <br />
+
+    <div style="text-align: center">
+      <img src="img/logo.png" alt="Logo" width="270px" height="270px" />
+      <br />
+
+      <select id="dropdownRestaurant" title="Restaurants">
+        <option value="Restaurant wählen">Restaurant wählen</option>
+        <option value="Mein Restaurant">Mein Restaurant</option>
+        <option value="China Restaurant">China Restaurant</option>
+        <option value="Pizzeria">Pizzeria</option>
+        <option value="Best Burgers">Best Burgers</option>
+      </select>
+      <br />
+      <button id="startButton" onclick="goToOverview()">START</button>
+    </div>
+
+    <!--
+      <h2>Web Worker</h2>
+      <button onclick="sendMessageToWebworker()">Post message 'hello'.</button>
+      <button onclick="askWebworkerForRecurringTask()">Post message 'recurring task'.</button>
+      <output class="webworker"></output>
+
+      
+      <h2>Service Worker</h2>
+      <output class="serviceworker"></output>
+    
+    <input class="custom_button" type=button onClick="parent.location='next.html'" value='Next'>
+-->
+    <!-- Scripts -->
+    <script src="use_webworker.js"></script>
+    <script src="use_serviceworker.js"></script>
+  </body>
+</html>

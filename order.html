@@ -1,0 +1,146 @@
+<!--
+AUTHORS: Susanne Jandl & Dana-Monica Vlas
+USED TEMPLATE CREATED BY: Müslüm Atas & Mathias Knoll
+DESCRIPTION: overview of selected products and order function, work in progress
+LAST CHANGE: 29.12.2023
+-->
+
+<!DOCTYPE html>
+<html lang="de">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Bestellung</title>
+
+    <link rel="icon" href="img/ordericon.png">
+
+    <!-- Manifest and Styles
+	  The manifest file lists all the information about the website in a JSON format und usually resides in the root folder of a web app -->
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- App Name -->
+    <meta name="application-name" content="Easy choice menu PWA" />
+    <!-- On iOS, you can specify a web application title for the launch icon -->
+    <meta name="apple-mobile-web-app-title" content="Easy choice menu PWA" />
+
+    <!-- Capability -->
+    <meta name="mobile-web-app-capable" content="yes" />
+    <!-- Hiding Safari User Interface Components in standalone mode-->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+
+    <!-- Starting URL -->
+    <meta name="msapplication-starturl" content="/index.html" />
+
+    <!-- Theme/Display -->
+    <meta name="theme-color" content="#FBFBFB"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+
+    <!-- Icon for iOS 180x180 -->
+    <link rel="apple-touch-icon" href="img/touch-icon-iphone.png">
+
+    <!-- Splash Screens for iOS -->
+    <link href="img/apple_splash_2048.png" sizes="2048x2732" rel="apple-touch-startup-image" />
+    <link href="img/apple_splash_1668.png" sizes="1668x2224" rel="apple-touch-startup-image" />
+    <link href="img/apple_splash_1536.png" sizes="1536x2048" rel="apple-touch-startup-image" />
+    <link href="img/apple_splash_1125.png" sizes="1125x2436" rel="apple-touch-startup-image" />
+    <link href="img/apple_splash_1242.png" sizes="1242x2208" rel="apple-touch-startup-image" />
+    <link href="img/apple_splash_750.png" sizes="750x1334" rel="apple-touch-startup-image" />
+    <link href="img/apple_splash_640.png" sizes="640x1136" rel="apple-touch-startup-image" />
+    <script src="main.js" defer></script>
+  </head>
+
+  <body class="fullscreen">
+    
+  
+
+    <div class="headerbox">
+      <div class="restaurantTitle" id="restaurantName">Mein Restaurant</div>
+    </div>
+
+    <div class="headerbox">  
+      <button class="backbutton" onclick="history.back()">&lt;</button>
+      <div class="subTitle" width="60%">Meine Bestellung</div>
+      <div class="subtitle_rightspace"></div>
+    </div>
+
+    <div class="flexcol">
+      <div class="flexrow orderitembox">
+        <div class="flexcol">
+          <div class="flexrow">
+            <div class="order_text">Pizza Tonno</div>
+            <div class="order_add">+</div>
+            <div class="order_amount">1</div>
+            <div class="order_remove">-</div>
+            <div class="order_price" value="10">€ 10,-</div>
+          </div>
+        </div>
+     </div>
+
+     <div class="flexrow orderitembox">
+      <div class="flexcol">
+        <div class="flexrow">
+          <div class="order_text">
+            <label for=tip>Trinkgeld</label>
+          </div>
+          <input type="text" class="order_input" id="tip"></div>
+        </div>
+      </div>
+   </div>
+
+   <div class="flexrow orderitembox">
+    <div class="flexcol">
+      <div class="flexrow">
+        <div class="order_text sum">Zwischensumme</div>
+        <div class="order_sum sum" value="10">€ 10,-</div>
+      </div>
+    </div>
+ </div>
+
+
+ <div class="flexrow orderitembox table_no" style="margin-top: 15vw;">
+  <div class="flexcol">
+    <div class="flexrow">
+      <div class="order_text" style="width: 80%;">
+        <label for=table_no>Bitte Tischnummer eingeben:</label>
+      </div>
+      <input type="text" class="order_input table_no" id="table_no"></div>
+    </div>
+  </div>
+
+
+
+  <img id="orderImage" src="img/waiterslogo.png" alt="Waiters"/>
+
+  <button id="orderbutton" onclick="alert('Deine Bestellung wurde aufgegeben')">Bestellen</button>
+
+
+    <div class="navbar">
+      <a href="index.html">
+        <img class="navbar_image" src="img/homeicon.png" alt="home">
+        <p>Home</p>
+      </a>
+      <a href="order.html">
+        <img class="navbar_image" src="img/ordericon.png" alt="bestellung">
+        <p>Bestellung</p>
+      </a>
+      <a href="filter.html">
+        <img class="navbar_image" src="img/filtericon.png" alt="filter">
+        <p>Filter</p>
+      </a>
+    </div>  
+  
+
+
+
+
+
+    <!-- Scripts -->
+    <script src="use_webworker.js"></script>
+    <script src="use_serviceworker.js"></script>
+    <!--
+      <input class="back_button" type=button onClick="parent.location='index.html'" value='Back'>
+    -->
+  </body>
+
+</html>
